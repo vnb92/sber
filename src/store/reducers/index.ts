@@ -1,6 +1,10 @@
 import { combineReducers } from 'redux';
-import { someReducer } from './some';
+import { todoInput } from './todoInput';
+import { todos } from './todos';
+import { todoPreview } from './todoPreview';
 
 export const reducer = combineReducers({
-  someReducer,
+  todoInput,
+  todos,
+  todoPreview,
 });

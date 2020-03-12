@@ -1,1 +1,6 @@
-export const CONSTANT = 'CONSTANT';
+export const TODO_INPUT = 'TODO_INPUT';
+export const ADD_TODO = 'ADD_TODO';
+export const TOGGLE_TODO_STATUS = 'TOGGLE_TODO_STATUS';
+export const OPEN_PREVIEW = 'OPEN_PREVIEW';
+export const CLOSE_PREVIEW = 'CLOSE_PREVIEW';
+export const CHANGE_PREVIEWED_TODO = 'CHANGE_PREVIEWED_TODO';
