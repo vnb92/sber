@@ -2,4 +2,22 @@
 
 .add-todo {
   display: flex;
+  justify-content: center;
+
+  min-height: 60px;
+  padding: 10px;
+
+  .input {
+    flex-grow: 1;
+
+    margin-right: 10px;
+
+    background-color: $white;
+    font-size: $font-size;
+  }
+
+  .button {
+    font-size: $font-size;
+    font-weight: 700;
+  }
 }

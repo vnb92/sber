@@ -2,4 +2,19 @@
 
 .todos {
   display: flex;
+  justify-content: space-between;
+
+  padding: 0 $indent;
+
+  .todos-list,
+  .preview {
+    flex-grow: 1;
+
+    border: 1px solid $indigo;
+    border-radius: $border-radius;
+  }
+
+  .todos-list {
+    margin-right: $indent;
+  }
 }
