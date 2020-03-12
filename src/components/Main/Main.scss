@@ -1,0 +1,8 @@
+@import '../../styles/variables.scss';
+
+.main {
+  flex-grow: 1;
+  margin: auto 0;
+
+  background-color: $light-gray;
+}

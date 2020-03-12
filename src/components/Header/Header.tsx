@@ -3,7 +3,7 @@ import './Header.scss';
 
 export const Header: FC = () => (
   <header className="header">
-    <div className="header__block-left" />
-    <div className="header__block-right" />
+    <div className="header__block" />
+    <div className="header__block" />
   </header>
 );

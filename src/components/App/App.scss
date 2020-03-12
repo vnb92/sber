@@ -1,11 +1,7 @@
-@import '../../styles/media.scss';
-
 #app {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-  color: red;
-
-  @include media-breakpoint(sm) {
-    padding: 5px;
-  }
+  min-height: 100%;
 }

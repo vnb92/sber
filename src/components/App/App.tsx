@@ -3,6 +3,8 @@ import { I18nextProvider } from 'react-i18next';
 import { Provider } from 'react-redux';
 import i18n from '../../i18n';
 import { Header } from '../Header/Header';
+import { Main } from '../Main/Main';
+import { Footer } from '../Footer/Footer';
 import { configureStore } from '../../store/store';
 import { StoreType } from '../../types/store';
 import { StateTypes } from '../../types/state';
@@ -24,7 +26,8 @@ export const App: FC = () => (
     <I18nextProvider i18n={i18n}>
       <>
         <Header />
-        <div>app</div>
+        <Main />
+        <Footer />
       </>
     </I18nextProvider>
   </Provider>
