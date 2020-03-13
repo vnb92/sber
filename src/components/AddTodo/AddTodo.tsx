@@ -1,5 +1,6 @@
 import React, { Component, Dispatch, KeyboardEvent, SyntheticEvent } from 'react';
 import { connect } from 'react-redux';
+import { i18next } from '../../i18n';
 import { Input } from '../Input/Input';
 import { Button } from '../Button/Button';
 import { actions } from '../../store/actions';
@@ -13,7 +14,8 @@ type TProps = {
   todos: StateTypes.Todos;
   candidate: string;
   setTodoInput: (value: string) => void;
-  addTodo: (todo: StateTypes.Todo) => void
+  addTodo: (todo: StateTypes.Todo) => void;
+  resetTodoInput: () => void;
 };
 
 class AddTodoComponent extends Component<TProps> {
@@ -29,15 +31,18 @@ class AddTodoComponent extends Component<TProps> {
       todoInput,
       candidate,
       addTodo,
+      resetTodoInput,
     } = this.props;
 
     const todo: StateTypes.Todo = {
       id: todos.length + 1,
       isDone: false,
+      isSelected: false,
       candidate,
       description: todoInput,
     };
     addTodo(todo);
+    resetTodoInput();
   };
 
   handleKeyUp = (e: KeyboardEvent) => {
@@ -52,7 +57,7 @@ class AddTodoComponent extends Component<TProps> {
       <div className="add-todo">
         <Input
           type="text"
-          placeholder="Type..."
+          placeholder={i18next.t('enterTodo')}
           onInput={this.handleInput}
           onKeyUp={this.handleKeyUp}
           value={todoInput}
@@ -61,7 +66,7 @@ class AddTodoComponent extends Component<TProps> {
           type="button"
           onClick={this.handleAddTodo}
         >
-          Add todo
+          {i18next.t('add')}
         </Button>
       </div>
     );
@@ -77,5 +82,6 @@ export const AddTodo = connect(
   (dispatch: Dispatch<ActionTypes>) => ({
     setTodoInput: (value: string) => dispatch(actions.setTodoInput(value)),
     addTodo: (todo: StateTypes.Todo) => dispatch(actions.addTodo(todo)),
+    resetTodoInput: () => dispatch(actions.resetTodoInput()),
   }),
 )(AddTodoComponent);

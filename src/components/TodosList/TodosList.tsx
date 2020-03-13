@@ -11,7 +11,9 @@ type TProps = {
   preview: StateTypes.TodoPreview;
   toggleTodoStatus: (id: number) => void;
   changePreviewedTodo: (todo: number) => void;
+  selectTodo: (id: number) => void;
   closePreview: () => void;
+  resetSelectAllTodos: () => void;
   openPreview: () => void;
 };
 
@@ -25,12 +27,15 @@ class TodosListComponent extends Component<TProps> {
     e.stopPropagation();
 
     const {
-      changePreviewedTodo,
       preview,
+      changePreviewedTodo,
+      selectTodo,
       closePreview,
+      resetSelectAllTodos,
       openPreview,
     } = this.props;
 
+    selectTodo(todo.id);
     changePreviewedTodo(todo.id);
 
     if (!preview.isOpen) {
@@ -40,6 +45,7 @@ class TodosListComponent extends Component<TProps> {
 
     if (preview.isOpen && preview.id === todo.id) {
       closePreview();
+      resetSelectAllTodos();
     }
   };
 
@@ -74,7 +80,9 @@ export const TodosList = connect(
   (dispatch: Dispatch<ActionTypes>) => ({
     toggleTodoStatus: (id: number) => dispatch(actions.toggleTodoStatus(id)),
     changePreviewedTodo: (id: number) => dispatch(actions.changePreviewedTodo(id)),
+    selectTodo: (id: number) => dispatch(actions.selectTodo(id)),
     closePreview: () => dispatch(actions.closePreview()),
+    resetSelectAllTodos: () => dispatch(actions.resetSelectAllTodos()),
     openPreview: () => dispatch(actions.openPreview()),
   }),
 )(TodosListComponent);

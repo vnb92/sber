@@ -8,13 +8,16 @@
 
   .todos-list,
   .preview {
+    flex-basis: 150px;
     flex-grow: 1;
 
     border: 1px solid $indigo;
     border-radius: $border-radius;
   }
 
-  .todos-list {
-    margin-right: $indent;
+  .preview {
+    min-width: 50%;
+    max-width: 50%;
+    margin-left: $indent;
   }
 }

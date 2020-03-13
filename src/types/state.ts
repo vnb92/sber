@@ -13,6 +13,7 @@ export namespace StateTypes {
     description: string;
     candidate: string;
     isDone: boolean;
+    isSelected: boolean;
   };
 
   export type Todos = Todo[];

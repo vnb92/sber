@@ -17,4 +17,4 @@ i18n
     lng: 'ru',
   });
 
-export default i18n;
+export { i18n as i18next };

@@ -5,4 +5,18 @@
   flex-direction: column;
 
   padding: $indent;
+
+  color: $indigo;
+
+  &__description {
+    max-width: 50%;
+    word-wrap: break-word;
+  }
+
+  &__id,
+  &__description,
+  &__candidate,
+  &__is-done {
+    margin-bottom: $indent;
+  }
 }

@@ -19,6 +19,22 @@ export const todos: ReducerTypes.Todos = (state = defaultState, action) => {
           : todo
       ));
 
+    case C.SELECT_TODO:
+      return state.map(todo => {
+        const isSelected = todo.id === action.payload;
+
+        return ({
+          ...todo,
+          isSelected,
+        });
+      });
+
+    case C.RESET_SELECT_ALL_TODOS:
+      return state.map(todo => ({
+        ...todo,
+        isSelected: false,
+      }));
+
     default:
       return state;
   }

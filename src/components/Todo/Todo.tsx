@@ -16,17 +16,25 @@ export const Todo: FC<TProps> = ({
     description,
     candidate,
     isDone,
+    isSelected,
   },
   handleDone,
   handlePreview,
 }) => (
   <li
-    className={cx('todo', isDone && 'todo--done')}
+    className={cx(
+      'todo',
+      isDone && 'todo--done',
+      isSelected && 'todo--selected',
+    )}
     onClick={handleDone}
   >
-    <span className="todo__id">{`#${id}`}</span>
-    <span className="todo__description">{description}</span>
-    <span className="todo__candidate">{candidate}</span>
+    <div className="todo__container">
+      {isDone && <div className="todo__line-through" />}
+      <span className="todo__id">{`#${id}`}</span>
+      <span className="todo__description">{description}</span>
+      <span className="todo__candidate">{candidate}</span>
+    </div>
     <div className="todo__buttons">
       <Button />
       <Button />

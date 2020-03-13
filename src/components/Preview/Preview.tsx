@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { connect } from 'react-redux';
+import { i18next } from '../../i18n';
 import { getTodoById } from '../../selectors/getTodoById';
 import { StateTypes } from '../../types/state';
 import './Preview.scss';
@@ -18,7 +19,13 @@ export const PreviewComponent: FC<TProps> = ({ preview, todos, todo }) => (
           <span className="preview__id">{`#${todo?.id}`}</span>
           <span className="preview__description">{todo?.description}</span>
           <span className="preview__candidate">{todo?.candidate}</span>
-          <span className="preview__isDone">{`${todo?.isDone}`}</span>
+          <span className="preview__is-done">
+            {i18next.t(
+              todo?.isDone
+                ? 'done'
+                : 'notDone',
+            )}
+          </span>
         </div>
       )
       : null}

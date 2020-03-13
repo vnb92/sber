@@ -7,8 +7,7 @@
 
   padding: $indent;
 
-  cursor: pointer;
-
+  color: $indigo;
   
   &:nth-child(n) {
     background-color: $light-blue;
@@ -18,9 +17,33 @@
     background-color: $light-blue-200;
   }
 
-  &--done {
-    text-decoration: line-through;
+  &__container {
+    position: relative;
+
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-right: $indent;
+  }
+
+  &.todo--done,
+  &.todo--selected.todo--done {
     color: $gray;
+  }
+
+  &.todo--selected {
+    background-color: $dark-blue;
+    color: $white;
+  }
+
+  &__line-through {
+    position: absolute;
+
+    height: 1px;
+    width: 100%;
+    background-color: $gray;
   }
 
   &__id,
@@ -28,14 +51,26 @@
     margin-right: $indent;
   }
 
+  &__description {
+    max-width: 350px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__candidate {
+    margin-left: auto;
+  }
+
   &__buttons {
     display: flex;
-    margin-left: auto;
 
     .button {
       width: 30px;
 
       margin-right: 10px;
+
+      font-weight: bold;
 
       &:last-child {
         margin-right: 0;
