@@ -3,6 +3,7 @@ export namespace StateTypes {
     todoInput: TodoInput;
     todos: Todos;
     todoPreview: TodoPreview;
+    candidates: Candidates;
   };
 
   export type TodoInput = string;
@@ -10,6 +11,7 @@ export namespace StateTypes {
   export type Todo = {
     id: number;
     description: string;
+    candidate: string;
     isDone: boolean;
   };
 
@@ -17,6 +19,8 @@ export namespace StateTypes {
 
   export type TodoPreview = {
     isOpen: boolean;
-    todo: Todo | null;
+    id: number | null;
   };
+
+  export type Candidates = string[];
 }

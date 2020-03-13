@@ -5,19 +5,36 @@ import { StateTypes } from '../../types/state';
 import './Todo.scss';
 
 type TProps = {
-  todo: StateTypes.Todo
+  todo: StateTypes.Todo;
+  handleDone: () => void;
+  handlePreview: (e: any) => void;
 };
 
-export const Todo: FC<TProps> = ({ todo: { id, description } }) => (
+export const Todo: FC<TProps> = ({
+  todo: {
+    id,
+    description,
+    candidate,
+    isDone,
+  },
+  handleDone,
+  handlePreview,
+}) => (
   <li
-    className={cx('todo')}
+    className={cx('todo', isDone && 'todo--done')}
+    onClick={handleDone}
   >
     <span className="todo__id">{`#${id}`}</span>
     <span className="todo__description">{description}</span>
+    <span className="todo__candidate">{candidate}</span>
     <div className="todo__buttons">
       <Button />
       <Button />
-      <Button>&gt;&gt;</Button>
+      <Button
+        onClick={handlePreview}
+      >
+        &gt;&gt;
+      </Button>
     </div>
   </li>
 );

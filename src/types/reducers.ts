@@ -6,4 +6,5 @@ export namespace ReducerTypes {
   export type TodoInput = Reducer<StateTypes.TodoInput, ActionTypes>;
   export type Todos = Reducer<StateTypes.Todos, ActionTypes>;
   export type TodoPreview = Reducer<StateTypes.TodoPreview, ActionTypes>;
+  export type Candidates = Reducer<StateTypes.Candidates, ActionTypes>;
 }

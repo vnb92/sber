@@ -1,5 +1,8 @@
 @import '../../styles/variables.scss';
 
 .preview {
+  display: flex;
+  flex-direction: column;
 
+  padding: $indent;
 }

@@ -7,12 +7,20 @@
 
   padding: $indent;
 
+  cursor: pointer;
+
+  
   &:nth-child(n) {
     background-color: $light-blue;
   }
-
+  
   &:nth-child(2n) {
     background-color: $light-blue-200;
+  }
+
+  &--done {
+    text-decoration: line-through;
+    color: $gray;
   }
 
   &__id,

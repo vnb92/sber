@@ -5,6 +5,11 @@ export const MockState: StateTypes.State = {
   todos: [],
   todoPreview: {
     isOpen: false,
-    todo: null,
+    id: null,
   },
+  candidates: [
+    'Иванов С.П.',
+    'Петров И.П.',
+    'Сидоров В.К.',
+  ],
 };

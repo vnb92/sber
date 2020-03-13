@@ -4,7 +4,7 @@ import { ReducerTypes } from '../../types/reducers';
 
 const defaultState: StateTypes.TodoPreview = {
   isOpen: false,
-  todo: null,
+  id: null,
 };
 
 export const todoPreview: ReducerTypes.TodoPreview = (state = defaultState, action) => {
@@ -24,7 +24,7 @@ export const todoPreview: ReducerTypes.TodoPreview = (state = defaultState, acti
     case C.CHANGE_PREVIEWED_TODO:
       return {
         ...state,
-        todo: action.payload,
+        id: action.payload,
       };
 
     default:

@@ -9,11 +9,7 @@ export const todos: ReducerTypes.Todos = (state = defaultState, action) => {
     case C.ADD_TODO:
       return [
         ...state,
-        {
-          id: state.length + 1,
-          isDone: false,
-          description: action.payload,
-        },
+        action.payload,
       ];
 
     case C.TOGGLE_TODO_STATUS:
