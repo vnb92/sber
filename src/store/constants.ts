@@ -1,4 +1,4 @@
-export const TODO_INPUT = 'TODO_INPUT';
+export const SET_TODO_INPUT = 'SET_TODO_INPUT';
 export const ADD_TODO = 'ADD_TODO';
 export const TOGGLE_TODO_STATUS = 'TOGGLE_TODO_STATUS';
 export const OPEN_PREVIEW = 'OPEN_PREVIEW';

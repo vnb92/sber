@@ -6,7 +6,7 @@ const defaultState: StateTypes.TodoInput = '';
 
 export const todoInput: ReducerTypes.TodoInput = (state = defaultState, action) => {
   switch (action.type) {
-    case C.TODO_INPUT:
+    case C.SET_TODO_INPUT:
       return action.payload;
 
     default:

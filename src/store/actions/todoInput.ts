@@ -1,7 +1,7 @@
 import * as C from '../constants';
 
-export const todoInput = (payload: string) => ({
-  type: C.TODO_INPUT,
+export const setTodoInput = (payload: string) => ({
+  type: C.SET_TODO_INPUT,
   payload,
 } as const);
 
