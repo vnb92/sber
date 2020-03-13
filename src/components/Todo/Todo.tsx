@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, SyntheticEvent } from 'react';
 import cx from 'classnames';
 import { Button } from '../Button/Button';
 import { StateTypes } from '../../types/state';
@@ -7,7 +7,7 @@ import './Todo.scss';
 type TProps = {
   todo: StateTypes.Todo;
   handleDone: () => void;
-  handlePreview: (e: any) => void;
+  handlePreview: (e: SyntheticEvent<HTMLButtonElement>) => void;
 };
 
 export const Todo: FC<TProps> = ({

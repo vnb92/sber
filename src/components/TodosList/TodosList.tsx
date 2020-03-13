@@ -1,4 +1,4 @@
-import React, { Component, Dispatch } from 'react';
+import React, { Component, Dispatch, SyntheticEvent } from 'react';
 import { connect } from 'react-redux';
 import { Todo } from '../Todo/Todo';
 import { actions } from '../../store/actions';
@@ -21,7 +21,7 @@ class TodosListComponent extends Component<TProps> {
     toggleTodoStatus(todoId);
   };
 
-  handlePreview = (todo: StateTypes.Todo) => (e: any) => {
+  handlePreview = (todo: StateTypes.Todo) => (e: SyntheticEvent<HTMLButtonElement>) => {
     e.stopPropagation();
 
     const {

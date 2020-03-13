@@ -1,4 +1,4 @@
-import React, { Component, Dispatch } from 'react';
+import React, { Component, Dispatch, KeyboardEvent, SyntheticEvent } from 'react';
 import { connect } from 'react-redux';
 import { Input } from '../Input/Input';
 import { Button } from '../Button/Button';
@@ -17,9 +17,10 @@ type TProps = {
 };
 
 class AddTodoComponent extends Component<TProps> {
-  handleInput = (e: any) => {
+  handleInput = (e: SyntheticEvent) => {
     const { setTodoInput } = this.props;
-    setTodoInput(e.target.value);
+    const target = e.target as HTMLInputElement;
+    setTodoInput(target.value);
   };
 
   handleAddTodo = () => {
@@ -39,7 +40,7 @@ class AddTodoComponent extends Component<TProps> {
     addTodo(todo);
   };
 
-  handleKeyUp = (e: any) => {
+  handleKeyUp = (e: KeyboardEvent) => {
     if (e.key !== 'Enter') return;
     this.handleAddTodo();
   };
