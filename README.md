@@ -1,3 +1,9 @@
+
+
+
+Тестовое задание в Сбербанк.
+Цель - показать организацию react-redux приложения и использовать typescript.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
